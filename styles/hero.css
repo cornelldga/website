@@ -1,0 +1,239 @@
+#home-hero {
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#home-hero .hero-background {
+  /* Background Image */
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#home-hero .hero-background:before {
+  /* Black Color Overlay */
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0.7;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* prevents the cursor from interacting with it */
+  pointer-events: none;
+}
+
+#home-hero .hero-container {
+  margin: auto;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home-hero .door,
+.doorclosed {
+  width: 100px;
+}
+
+#home-hero .hero-content {
+  height: 90vh;
+  margin: auto;
+  max-width: clamp(29rem, 60vw, 35.125rem);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 1.25rem;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#home-hero .hero-text {
+  /* 16px - 20px */
+  line-height: 1.5em;
+  text-align: center;
+  width: 100%;
+  /* 32px - 40px */
+  margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
+  /* 40px - 48px */
+  margin-bottom: clamp(2.5rem, 4vw, 3rem);
+  color: #f7f7f7;
+
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+      /* Initial translateY value */
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0);
+      /* Final translateY value */
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateY(0);
+      /* Initial translateY value */
+  }
+
+  to {
+      opacity: 0;
+      transform: translateY(-20px);
+      /* Final translateY value */
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+.typing-demo {
+  margin-top: 2rem;
+  color: white;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 6ch;
+  animation: typing 6s steps(6), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+}
+
+@keyframes typing {
+  from {
+      width: 0
+  }
+}
+
+@keyframes blink {
+  50% {
+      border-color: transparent
+  }
+}
+
+.dgaherotxt span, .dgaherotxtmain span {
+  position: relative;
+  animation: scatter 1.75s infinite;
+}
+
+.dgaherotxtmain span:nth-child(1n) {
+  color: #ef233c;
+  text-shadow: 2px 2px 5px #BE0E23;
+  animation-delay: 0.3s;
+}
+
+.dgaherotxtmain span:nth-child(2n) {
+  color: #FF990A;
+  text-shadow: 2px 2px 5px #E08300;
+  animation-delay: 0.5s;
+}
+
+.dgaherotxtmain span:nth-child(3n) {
+  color: #4fb735;
+  text-shadow: 2px 2px 5px #3EA923;
+  animation-delay: 0.7s;
+}
+
+.dgaherotxtmain span:nth-child(4n) {
+  color: #fcda18;
+  text-shadow: 2px 2px 5px #E0BF00;
+  animation-delay: 0.5s;
+}
+
+.dgaherotxtmain span:nth-child(5n) {
+  color: #279fc1;
+  text-shadow: 2px 2px 5px #00A0CC;
+  animation-delay: 0.3s;
+}
+
+@keyframes scatter {
+  0% {
+      top: 0;
+  }
+
+  50% {
+      top: -10px;
+  }
+
+  100% {
+      top: 0;
+  }
+}
+
+.dgaherotxtmain {
+  font-size: 75px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: -2.5%;
+  position: relative;
+  text-shadow: 2px 2px 5px;
+}
+
+.dgaherotxt {
+  font-size: 75px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-shadow: 2px 2px 5px;
+  display: inline-block; /* This makes the element only as wide as its content */
+  position: relative;
+  margin: auto;
+  margin-bottom: 1%;
+}
+
+/* .dgaherotxt::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  right: -5%;
+  bottom: -10%; 
+  background-color: #1A1A1A; 
+  opacity: 0.4; 
+  padding: 10%;
+} */
+
+/* .hidehero2,
+.hidehero {
+  display: none;
+} */
+
+
+
+#home-hero .discord-join {
+  z-index: 1;
+}
+
+#mario {
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+@media only screen and (max-width: 600px) {
+.dgaherotxtmain {
+  width: 100%; /* Ensures the header takes up the full width of the viewport */
+  font-size: clamp(2rem, 12vw, 12rem); /* Adjusts the font size based on the viewport width */
+  /* Other styles for h1 can go here */
+}
+}

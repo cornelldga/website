@@ -1,0 +1,61 @@
+#team-section {
+  position: relative;
+  padding-top: 15vh; /* Add space on top inside the section */
+  background-image: url('../images/pokemon_repeat.png');
+  /* background-size: cover; 
+  background-position: center;  */
+  /* background-repeat: no-repeat;  */
+  padding-bottom: 5vh;
+  z-index: 1; 
+}
+
+#team-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.719); /* Add a semi-transparent black overlay */
+  z-index: -1; /* Place the overlay behind the content */
+}
+
+.team-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 135vh; /* Adjust based on your preference */
+  margin: 0 auto; /* Center the team-wrap */
+}
+
+.team-card {
+  width: calc(33.333% - 20px); /* Adjust size here for three items per row */
+  display: block; /* Make the anchor block to contain the image */
+  border-radius: 10px; /* Optional: for rounded corners */
+  overflow: hidden; /* Optional: for containing the image within the border-radius */
+  transition: transform 2s ease-in-out;
+}
+
+.team-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 2s ease-in-out;
+}
+
+
+.team-card:hover {
+  transform: translateY(-10px); /* Float effect on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .team-card {
+      width: calc(50% - 20px); /* two items per row on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .team-card {
+      width: 100%; /* one item per row on very small screens */
+  }
+}

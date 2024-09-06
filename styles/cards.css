@@ -1,0 +1,394 @@
+
+    #card-section {
+        padding: var(--sectionPadding);
+        background-color: #1a1a1a;
+   }
+    #card-section .card-container {
+        width: 100%;
+       /* changes to 1440px on desktop */
+        max-width: 43.75rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+   }
+    #card-section .card-content {
+       /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+       /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+   }
+    #card-section .card-title {
+        max-width: 30ch;
+        color: white;
+   }
+    #card-section .cards {
+        width: 100%;
+        margin: -2%;
+        padding: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: clamp(1rem, 1.5vw, 1.25rem);
+   }
+    #card-section .card {
+        list-style: none;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 2rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+        transition: background-color 0.3s;
+   }
+    #card-section .card-red {
+        background-color: #BE0E23;
+   }
+    #card-section .card-green {
+        background-color: #3EA923;
+   }
+    #card-section .card-orange {
+        background-color: #E08300;
+   }
+    #card-section .card-blue {
+        background-color: #00A0CC;
+   }
+    #card-section .card:hover {
+        cursor: pointer;
+   }
+    #card-section .card:hover .card-img {
+        opacity: 1;
+   }
+    #card-section .card:hover .card-img img {
+        transform: scale(1.1);
+   }
+    #card-section .card:hover .card-icon {
+       /* turns it white */
+        filter: grayscale(1) brightness(1000%);
+   }
+    #card-section .card-img {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        z-index: -1;
+        background-color: #1a1a1a;
+        transition: opacity 0.3s;
+   }
+    #card-section .card-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0.4;
+        object-fit: cover;
+        transition: transform 0.6s;
+   }
+    #card-section .card-whole {
+        text-decoration: none;
+   }
+    #card-section .card-icon {
+        width: auto;
+        height: 3rem;
+        margin-bottom: 1.5rem;
+        display: block;
+   }
+    #card-section .card-icon path {
+        transition: fill 0.3s;
+   }
+    #card-section .card-h3 {
+        font-size: clamp(1.25rem, 2vw, 1.5625rem);
+        line-height: 1.2em;
+        margin: 0;
+        margin-bottom: 1rem;
+        color: #f7f7f7;
+        transition: color 0.3s;
+        font-weight: bold;
+   }
+    #card-section .card-text {
+        font-size: 1rem;
+        line-height: 1.5em;
+        margin: 0;
+        color: #f7f7f7;
+        transition: color 0.3s;
+        line-height: 1.5em;
+        max-width: 40.625rem;
+        margin-bottom: 2vh;
+   }
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #card-section .cards {
+        justify-content: space-between;
+       /* makes sure every box "stretches" to be the same height as the tallest box */
+        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: wrap;
+   }
+    #card-section .card {
+        width: 48.6%;
+   }
+}
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #card-section .card-container {
+        max-width: 90rem;
+   }
+    #card-section .cards {
+        justify-content: center;
+   }
+    #card-section .card {
+        width: clamp(23.84%, 22.5vw, 23.95%);
+   }
+
+   .card-text .hovermidtext {
+    text-decoration: none;
+    color: #f7f7f7;
+    font-weight: 700;
+    position: relative;
+}
+.card-text .hovermidtext::before {
+    content: '';
+    background-color: #ef233bec;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 8px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+}
+.card-text .hovermidtext:hover::before {
+    bottom: 0;
+    height: 100%;
+}
+
+}
+
+@media only screen and (min-width: 20rem) {
+    .pjteam {
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        z-index: -2;
+   }
+
+   #pjteam-home {
+    background: linear-gradient(#1a1a1acd, #1a1a1ad5), url("https://c4.wallpaperflare.com/wallpaper/855/51/782/video-game-collage-wallpaper-preview.jpg");
+   }
+
+   #pjteam-about {
+    background: linear-gradient(#1a1a1acd, #1a1a1ad5), url("../images/smash_bckgrnd.jpeg");
+   }
+
+    .pjteam .pjteam-info {
+        width: 100%;
+        max-width: 34.375rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 6vw, 4rem);
+        z-index: 10;
+   }
+    .pjteam .pjteam-desc {
+       /* set text align to left if content needs to be left aligned */
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+       /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
+   }
+    .pjteam .dgaherotxt {
+        text-align: left;
+   }
+    .pjteam .pjteam-text {
+        margin-bottom: 1rem;
+        color: #f7f7f7;
+        line-height: 1.5em;
+        max-width: 40.625rem;
+        margin-bottom: 2rem;
+   }
+    .pjteam .cs-button-solid {
+        font-size: 1rem;
+       /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+       /* prevents padding from adding to the width */
+        box-sizing: border-box;
+   }
+    .pjteam .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+   }
+    .pjteam .cs-button-solid:hover:before {
+        width: 100%;
+   }
+    .pjteam .pjteam-polaroid {
+        width: 95%;
+        max-width: 34.375rem;
+       /* 28px - 80px */
+       /* pushes up and down by the same amount the decorative box overflows the wrapper */
+        margin: clamp(1.75em, 7.8vw, 5em) 0;
+        position: relative;
+   }
+    .pjteam .polaroid {
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+   }
+    .pjteam .polaroid > img{
+        max-width: 100%;
+        height: auto;
+   }
+    .pjteam .caption {
+        font-size: 1rem;
+        text-align: center;
+        line-height: 2em;
+   }
+    .pjteam .polaroid-layout {
+        display: inline-block;
+        margin-top: 2rem;
+   }
+}
+@media only screen and (min-width: 48rem) {
+
+    .pjteam .pjteam-info {
+        max-width: 80rem;
+        flex-direction: row;
+        justify-content: flex-start;
+       /* 60px - 128px */
+        gap: clamp(3.75rem, 9.5vw, 8rem);
+   }
+    .pjteam .pjteam-polaroid {
+       /* 328px - 502px */
+        width: clamp(20.5rem, 37.5vw, 31.375rem);
+       /* 440px - 520px */
+        height: clamp(27.5rem, 40vw, 32.5rem);
+        flex: none;
+   }
+    .pjteam .cs-picture {
+        margin: 0 0 0 clamp(1rem, 5vw, 1.25rem);
+        height: 100%;
+        flex: none;
+   }
+    .pjteam .pjteam-desc {
+        width: 45%;
+   }
+
+}
+
+
+.content-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center; /* Centering text */
+}
+
+
+#what-we-do {
+    background-image: url("../images/hollowknights_bckgrnd.jpeg");
+}
+
+
+.background-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dimming effect */
+    padding: 50px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+
+.mission-statement {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: -2.5% auto 0;
+    max-width: 50%; 
+}
+
+
+.tilesWrap {
+    padding: 0;
+    margin: 50px auto;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tilesWrap li {
+    width: 250px; /* Larger fixed width */
+    height: 300px; /* Fixed height for consistency */
+    padding: 20px;
+    position: relative;
+    vertical-align: top;
+    margin: 15px;
+    background: rgba(207, 50, 50, 0.435); /* Semi-transparent background */
+    border: 1px solid #661b1b;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tilesWrap li h2 {
+    font-size: 55px; /* Adjusted for new tile size */
+    margin: 0;
+    opacity: 0.2;
+}
+
+.tilesWrap li h3 {
+    font-size: 20px;
+    color: #b7b7b7;
+    margin: 10px 0;
+}
+
+.tilesWrap li p {
+    font-size: 16px;
+    line-height: 18px;
+    color: #b7b7b7;
+}

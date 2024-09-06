@@ -1,0 +1,58 @@
+.event-details {
+  position: relative; /* Needed to position the pseudo-elements */
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 5vh;
+  overflow: hidden; /* Ensures the pseudo-elements don't extend outside */
+}
+
+.event-details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://wallpapercave.com/wp/wp12164096.jpg');
+  background-size: cover; /* Cover the entire section with the background */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background from repeating */
+}
+
+.event-detailsx::after, .event-detailsy::after  {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.307); /* Semi-transparent black overlay */
+}
+
+
+.event-detailsx::before {
+  background-image: url('https://wallpapers.com/images/hd/aesthetic-gaming-omjy0egctdfygj93.jpg');
+  opacity: 0.9; /* Adjust background opacity without affecting text */
+  z-index: -2; /* Ensures it stays behind all content and the overlay */
+}
+
+.event-detailsy::before {
+  background-image: url('https://external-preview.redd.it/9AyzTbX4_6U82ktFSo_MjHAQr6LkaVV-ocJ2GwaI3sI.jpg?width=1080&crop=smart&auto=webp&s=68727072c6f75a7ec04847f8f8feb56bce360252');
+  opacity: 0.5; /* Adjust background opacity without affecting text */
+  z-index: -2; /* Ensures it stays behind all content and the overlay */
+}
+
+.event-details p {
+  margin: 0;
+  padding: 0 0 20px 0;
+  color: white;
+  position: relative; /* Ensures text is above the pseudo-element */
+}
+
+.event-details iframe {
+  margin: auto;
+  display: block; /* Ensures the iframe is centered in the section */
+  max-width: 100%; /* Ensures the iframe is responsive */
+  position: relative; /* Ensures iframe is above the pseudo-element */
+}

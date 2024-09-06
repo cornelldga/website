@@ -1,0 +1,95 @@
+
+.dgaherotxts {
+  font-size: 50px;
+  color: white;
+  margin-top: -2%;
+}
+
+.dgaherotxts {
+  position: relative; /* Needed to position the image absolutely relative to the text */
+  cursor: pointer;
+}
+
+.highlight {
+  text-decoration: underline;
+  color: black; /* Default color */
+  transition: color 0.3s ease;
+}
+
+.hover-image {
+  display: block; /* Changed to block to respect the top margin */
+  margin-top: 20px; /* Space between the text and the image */
+  left: 50%; /* Centers the image */
+  transform: translateX(-50%); /* Adjusts for true centering */
+
+  border: none;
+  position: absolute; /* Keeps the image positioned in relation to the viewport */
+  z-index: 500;
+}
+
+.image-text-combos {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the combos in the section */
+  justify-content: center; /* Ensures the content is centered vertically if needed */
+  width: 100%; /* Takes full width to leverage centering */
+  max-width: 800px; /* Maximum width of the section */
+  margin: 0 auto; /* Centers the section horizontally */
+}
+
+.combo {
+  display: flex;
+  align-items: flex-start; /* Keeps items aligned at their top edges */
+  justify-content: center; /* Centers items within each combo */
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 75%;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column; /* Stacks the image and caption vertically */
+  align-items: center; /* Center-align the image and caption */
+  margin-right: 20px; /* Space between the image/caption block and the text */
+}
+
+.image-container img {
+  width: 100px; /* Set image width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.caption {
+  font-size: 0.8em; /* Smaller font size for captions */
+  color: white; /* Grey color for captions */
+  margin-top: 5px; /* Space between image and caption */
+}
+
+.combo p {
+  flex-grow: 1; /* Allows text to take up remaining space */
+  margin: 0; /* Removes default margins */
+  text-align: left; /* Aligns text to the left within its flex container */
+}
+
+.polaroid {
+  width:35%; /* Adjust the size as needed */
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px 10px 20px 10px;
+  margin: 20px auto; /* Centering the polaroid */
+}
+
+.polaroid img {
+  width: 100%; /* Makes the image fill the container */
+  height: auto; /* Maintains the aspect ratio */
+}
+
+.caption {
+  color: black;
+  font-size: 14px;
+  padding-top: 5px; /* Space between image and caption */
+}
+
+.discord-join {
+  font-size: 50px;
+}

@@ -1,0 +1,312 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.727);
+    /* Adjust the alpha value for transparency */
+    z-index: 200;
+    display: none;
+}
+
+.modal {
+    max-width: 700px;
+    width: 85%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    background: #1a1a1a;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    z-index: 200;
+    display: none;
+}
+
+.modal:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+    z-index: -1;
+    animation: pulse 22s linear infinite;
+    display: none;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 250px rgba(190, 14, 35, 0.5);
+    }
+
+    25% {
+        box-shadow: 0 0 150px rgba(224, 131, 0, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(62, 169, 35, 0.5);
+    }
+
+    75% {
+        box-shadow: 0 0 100px rgba(0, 160, 204, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 150px rgba(224, 191, 0, 0.5);
+    }
+}
+
+.modal img {
+    margin-top: 5%;
+}
+
+.modalcontainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.modal.show {
+    display: block;
+}
+
+#close {
+    z-index: 102;
+    /* Ensure close button is above the overlay */
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    margin-right: 1%;
+    font-size: 40px;
+}
+
+.modaltitle {
+    font-size: 2.5rem;
+}
+
+.modaltitle span {
+    display: block;
+    font-weight: 400;
+}
+
+.modalparagraph {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.modalimg {
+    order: -1;
+    /* Move image above text */
+}
+
+
+.modaltitle span {
+    display: none;
+    /* Remove 'START-UP CONTEST' text */
+}
+
+.modalparagraph {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.modalwrapper {
+    display: inline-flex;
+    list-style: none;
+    margin-top: 20px;
+    /* Adjust the margin as needed */
+}
+
+.modalwrapper .icon {
+    position: relative;
+    background: #fffafa;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0px 12px rgb(255, 49, 49);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modalwrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modalwrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modalwrapper .icon:hover .tooltip {
+    top: -35px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+.modalwrapper .discord:hover,
+.modalwrapper .discord:hover .tooltip,
+.modalwrapper .discord:hover .tooltip::before {
+    background: #5D5179;
+    color: #ffffff;
+    box-shadow: 0 0px 12px rgb(121, 48, 163);
+}
+
+.modalwrapper .instagram:hover,
+.modalwrapper .instagram:hover .tooltip,
+.modalwrapper .instagram:hover .tooltip::before {
+    background: #EC69AF;
+    color: #ffffff;
+    box-shadow: 0 0px 12px rgb(189, 4, 137);
+}
+
+.modalwrapper .linkedin:hover,
+.modalwrapper .linkedin:hover .tooltip,
+.modalwrapper .linkedin:hover .tooltip::before {
+    background: #00A0CC;
+    color: #ffffff;
+    box-shadow: 0 0px 12px rgb(3, 21, 181);
+}
+
+.modalwrapper .youtube:hover,
+.modalwrapper .youtube:hover .tooltip,
+.modalwrapper .youtube:hover .tooltip::before {
+    background: #BE0E23;
+    color: #ffffff;
+    box-shadow: 0 0px 12px rgb(185, 2, 2);
+}
+
+.modalwrapper .email:hover,
+.modalwrapper .email:hover .tooltip,
+.modalwrapper .email:hover .tooltip::before {
+    background: #3EA923;
+    color: #ffffff;
+    box-shadow: 0 0px 12px rgb(3, 176, 66);
+}
+
+.modalwrapper .icon:hover .fab,
+.modalwrapper .icon:hover .fas {
+    color: #ffffff;
+}
+
+.modalwrapper .icon .fa-discord {
+    color: #5D5179;
+}
+
+.modalwrapper .icon .fa-instagram {
+    color: #EC69AF;
+}
+
+.modalwrapper .icon .fa-linkedin {
+    color: #00A0CC;
+}
+
+.modalwrapper .icon .fa-youtube {
+    color: #BE0E23;
+}
+
+.modalwrapper .icon .fa-envelope {
+    color: #3EA923;
+}
+
+.modalfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Add padding to ensure content doesn't touch the edges */
+    margin-top: -10%;
+}
+
+.modaltext {
+    flex: 2; /* Give more space to the text */
+    text-align: left;
+    margin-right: 20px; /* Adjust the right margin to decrease space between text and image */
+}
+
+.modalparagraph {
+    margin-bottom: -10px; /* Adjust bottom margin for spacing between paragraphs */
+}
+
+.modalimage {
+    max-width: 30%; /* Decrease the width of the image */
+    height: auto;
+    flex: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .overlay {
+        /* Ensures the overlay covers the entire viewport */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.727);
+        z-index: 200;
+        display: block; /* Assuming you want the overlay to show when modal is active */
+    }
+
+    .modal {
+        /* Ensures the modal covers the entire viewport */
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0); /* Resets the transform */
+        border-radius: 0; /* Optional: removes border radius for full screen */
+        background: #1a1a1a;
+        z-index: 201;
+        display: block; /* Assuming you want the modal to show when active */
+        overflow-y: auto; /* Adds scroll to the modal content if it exceeds the screen height */
+    }
+    .modalcontent {
+        padding: 20px; /* Add padding inside the modal for spacing */
+    }
+
+    #close {
+        z-index: 102;
+        /* Ensure close button is above the overlay */
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1rem;
+        margin-right: 1%;
+        font-size: 40px;
+    }
+
+}
