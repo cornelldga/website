@@ -7,6 +7,12 @@
         padding-top: 7%;
         padding-bottom: 3%;
     }
+
+    a {
+    color: red;
+    font-style: italic;
+    }
+
     
     .contact-text {
         font-size: 16px;
